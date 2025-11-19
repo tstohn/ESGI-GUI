@@ -17,6 +17,16 @@
 #include <QEvent>
 #include <QWheelEvent>
 
+class SeqBlockInformation
+{
+
+public:
+    SeqBlockInformation(QPixmap image, std::string type);
+
+    std::string barcodeType;
+    QPixmap barcodeImage;
+};
+
 class SeqBlockLabel : public QLabel
 {
     Q_OBJECT
@@ -24,8 +34,13 @@ class SeqBlockLabel : public QLabel
 
 public:
     explicit SeqBlockLabel(QWidget* widget = nullptr);
+    void set_type(std::string type){barcodeType = type;}
+    std::string get_type(){return barcodeType;}
+
 private:
     void create_drag(const QPoint& pos, QWidget* widget);
+    std::string barcodeType;
+
 protected:
     void mousePressEvent(QMouseEvent *event) override;
 };
@@ -40,7 +55,7 @@ public:
    QVector<double> seqBlockEnd;
 
 signals:
-    void itemdrop(QPixmap);
+    void itemdrop(SeqBlockInformation);
 protected:
     void dragEnterEvent(QDragEnterEvent* event) override;
     void dragLeaveEvent(QDragLeaveEvent* event) override;

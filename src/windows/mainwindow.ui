@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1254</width>
-    <height>763</height>
+    <width>1321</width>
+    <height>781</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,14 +17,31 @@
    <widget class="QPushButton" name="RunButton">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>570</y>
+      <x>960</x>
+      <y>600</y>
       <width>91</width>
-      <height>51</height>
+      <height>61</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true">QPushButton {
+background-color: rgb(255, 255, 255);
+border: 2px solid;
+}
+
+QPushButton:hover {
+    border: 2px solid blue;
+}
+
+QPushButton:pressed {
+    border: 4px solid blue;
+}</string>
     </property>
     <property name="text">
      <string>START</string>
@@ -33,10 +50,10 @@
    <widget class="RedSeqGraphicsView" name="ReadSequenceGraphicsView">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>170</y>
-      <width>961</width>
-      <height>381</height>
+      <x>260</x>
+      <y>140</y>
+      <width>1041</width>
+      <height>421</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -57,14 +74,34 @@ border-color: rgb(34, 41, 255);</string>
    <widget class="QPushButton" name="HomeButton">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>10</y>
+      <x>50</x>
+      <y>35</y>
       <width>141</width>
       <height>61</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true">QPushButton {
+background-color: rgb(255, 255, 255);
+border: 2px solid;
+}
+
+QPushButton:hover {
+    border: 2px solid blue;
+}
+
+QPushButton:pressed {
+    border: 4px solid blue;
+}</string>
     </property>
     <property name="text">
      <string>HOME</string>
@@ -73,7 +110,7 @@ border-color: rgb(34, 41, 255);</string>
    <widget class="SeqBlockLabel" name="ConstantBlock">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>10</x>
       <y>180</y>
       <width>111</width>
       <height>41</height>
@@ -93,7 +130,7 @@ border-color: rgb(34, 41, 255);</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>260</y>
+      <y>280</y>
       <width>150</width>
       <height>50</height>
      </rect>
@@ -118,7 +155,7 @@ border-color: rgb(34, 41, 255);</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>360</y>
+      <y>380</y>
       <width>150</width>
       <height>31</height>
      </rect>
@@ -140,7 +177,7 @@ border-color: rgb(34, 41, 255);</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>469</y>
+      <y>480</y>
       <width>150</width>
       <height>31</height>
      </rect>
@@ -158,14 +195,25 @@ border-color: rgb(34, 41, 255);</string>
    <widget class="QPushButton" name="ClearButton">
     <property name="geometry">
      <rect>
-      <x>1150</x>
-      <y>170</y>
+      <x>10</x>
+      <y>550</y>
       <width>91</width>
-      <height>51</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true">QPushButton {
+background-color: rgb(255, 255, 255);
+border: 1px solid;
+}
+
+QPushButton:hover {
+    border: 1px solid red;
+}
+
+QPushButton:pressed {
+    border: 1.5px solid red;
+}</string>
     </property>
     <property name="text">
      <string>CLEAR</string>
@@ -175,33 +223,33 @@ border-color: rgb(34, 41, 255);</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>160</y>
-      <width>60</width>
+      <y>150</y>
+      <width>91</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>Contant</string>
+     <string>CONSTANT</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>240</y>
-      <width>60</width>
+      <y>250</y>
+      <width>91</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>Variable</string>
+     <string>VARIABLE</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>330</y>
+      <y>350</y>
       <width>60</width>
       <height>16</height>
      </rect>
@@ -214,7 +262,7 @@ border-color: rgb(34, 41, 255);</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>400</y>
+      <y>450</y>
       <width>60</width>
       <height>16</height>
      </rect>
@@ -227,7 +275,7 @@ border-color: rgb(34, 41, 255);</string>
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>80</y>
+      <y>10</y>
       <width>1251</width>
       <height>71</height>
      </rect>
@@ -239,9 +287,9 @@ border-color: rgb(34, 41, 255);</string>
    <widget class="QProgressBar" name="progressBar">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>590</y>
-      <width>211</width>
+      <x>970</x>
+      <y>690</y>
+      <width>111</width>
       <height>41</height>
      </rect>
     </property>
@@ -249,26 +297,337 @@ border-color: rgb(34, 41, 255);</string>
      <number>24</number>
     </property>
    </widget>
-   <widget class="QLabel" name="label_5">
+   <widget class="QLabel" name="StatusLabel">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>570</y>
-      <width>171</width>
+      <x>970</x>
+      <y>670</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Status:</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="TestButton">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>650</y>
+      <width>131</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+background-color: rgb(255, 255, 255);
+border: 1px solid;
+}
+
+QPushButton:hover {
+    border: 1px solid blue;
+}
+
+QPushButton:pressed {
+    border: 1.5px solid blue;
+}</string>
+    </property>
+    <property name="text">
+     <string>TEST PATTERN</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="LowBar">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>590</y>
+      <width>1191</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="WriteButton">
+    <property name="geometry">
+     <rect>
+      <x>1080</x>
+      <y>600</y>
+      <width>101</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+background-color: rgb(255, 255, 255);
+border: 2px solid;
+}
+
+QPushButton:hover {
+    border: 2px solid blue;
+}
+
+QPushButton:pressed {
+    border: 4px solid blue;
+}</string>
+    </property>
+    <property name="text">
+     <string>WRITE 
+ OUTPUT</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ProcessingButton">
+    <property name="geometry">
+     <rect>
+      <x>1210</x>
+      <y>600</y>
+      <width>101</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+background-color: rgb(255, 255, 255);
+border: 2px solid;
+}
+
+QPushButton:hover {
+    border: 2px solid blue;
+}
+
+QPushButton:pressed {
+    border: 4px solid blue;
+}</string>
+    </property>
+    <property name="text">
+     <string>PROCESS 
+ READS</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_2">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>90</y>
+      <width>51</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>90</y>
+      <width>91</width>
       <height>21</height>
      </rect>
     </property>
     <property name="text">
-     <string>STATUS DEMULTIPLEXING</string>
+     <string>Number Cores:</string>
     </property>
    </widget>
+   <widget class="QLineEdit" name="fwFastq">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>70</y>
+      <width>141</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>70</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>FW</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>110</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>RV</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="rvFastq">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>110</y>
+      <width>141</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>30</y>
+      <width>151</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>INPUT (fastq/fastq.gz)</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>70</y>
+      <width>131</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Use all Cores</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_5">
+    <property name="geometry">
+     <rect>
+      <x>1090</x>
+      <y>700</y>
+      <width>121</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>1090</x>
+      <y>670</y>
+      <width>111</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Output directoy:</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="StopButton">
+    <property name="geometry">
+     <rect>
+      <x>960</x>
+      <y>600</y>
+      <width>91</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+background-color: rgb(255, 255, 255);
+border: 2px solid;
+}
+
+QPushButton:hover {
+    border: 2px solid red;
+}
+
+QPushButton:pressed {
+    border: 4px solid red;
+}</string>
+    </property>
+    <property name="text">
+     <string>STOP</string>
+    </property>
+   </widget>
+   <zorder>TopBar</zorder>
+   <zorder>LowBar</zorder>
+   <zorder>ReadSequenceGraphicsView</zorder>
+   <zorder>ConstantBlock</zorder>
+   <zorder>VariableBlock</zorder>
+   <zorder>UMIBlock</zorder>
+   <zorder>RNABlock</zorder>
+   <zorder>ClearButton</zorder>
+   <zorder>label</zorder>
+   <zorder>label_2</zorder>
+   <zorder>label_3</zorder>
+   <zorder>label_4</zorder>
+   <zorder>StatusLabel</zorder>
+   <zorder>TestButton</zorder>
+   <zorder>HomeButton</zorder>
+   <zorder>WriteButton</zorder>
+   <zorder>ProcessingButton</zorder>
+   <zorder>lineEdit_2</zorder>
+   <zorder>label_6</zorder>
+   <zorder>label_7</zorder>
+   <zorder>label_8</zorder>
+   <zorder>progressBar</zorder>
+   <zorder>label_9</zorder>
+   <zorder>fwFastq</zorder>
+   <zorder>rvFastq</zorder>
+   <zorder>radioButton</zorder>
+   <zorder>lineEdit_5</zorder>
+   <zorder>label_10</zorder>
+   <zorder>StopButton</zorder>
+   <zorder>RunButton</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1254</width>
+     <width>1321</width>
      <height>24</height>
     </rect>
    </property>

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1145</width>
-    <height>781</height>
+    <width>733</width>
+    <height>617</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -26,8 +26,8 @@
     <widget class="QPushButton" name="DemultiplexButton">
      <property name="geometry">
       <rect>
-       <x>-40</x>
-       <y>620</y>
+       <x>-10</x>
+       <y>240</y>
        <width>271</width>
        <height>81</height>
       </rect>
@@ -39,8 +39,8 @@
     <widget class="QPushButton" name="CreateMatrixButton">
      <property name="geometry">
       <rect>
-       <x>290</x>
-       <y>620</y>
+       <x>-10</x>
+       <y>330</y>
        <width>271</width>
        <height>81</height>
       </rect>
@@ -50,19 +50,8 @@
 SINGLE-CELL x FEATURE MATRIX</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="AnalyseButton">
-     <property name="geometry">
-      <rect>
-       <x>600</x>
-       <y>620</y>
-       <width>271</width>
-       <height>81</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>ANALYSE DATA</string>
-     </property>
-    </widget>
+    <zorder>CreateMatrixButton</zorder>
+    <zorder>DemultiplexButton</zorder>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -70,7 +59,7 @@ SINGLE-CELL x FEATURE MATRIX</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1145</width>
+     <width>733</width>
      <height>24</height>
     </rect>
    </property>

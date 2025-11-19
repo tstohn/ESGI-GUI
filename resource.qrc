@@ -3,5 +3,11 @@
         <file>media/DemultiplexingLogo.png</file>
         <file>media/DemultiplexingLogo.svg</file>
         <file>media/ConstantBlock.png</file>
+        <file>media/RNASeqBlock.png</file>
+        <file>media/ConstantSeqBlock.png</file>
+        <file>media/VariableSeqBlock.png</file>
+        <file>media/UMISeqBlock.png</file>
+        <file>media/TopBar.png</file>
+        <file>media/LowBar.png</file>
     </qresource>
 </RCC>

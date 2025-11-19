@@ -25,12 +25,19 @@ void RedSeqGraphicsView::dragMoveEvent(QDragMoveEvent* event)
 
 void RedSeqGraphicsView::dropEvent(QDropEvent* event)
 {
-    QLabel* seqLabel = qobject_cast<QLabel*>(event->source());
+    SeqBlockLabel* seqLabel = qobject_cast<SeqBlockLabel*>(event->source());
     QPixmap seqlImage = seqLabel->pixmap();
+    SeqBlockInformation info(seqlImage, seqLabel->get_type());
 
-    emit itemdrop(seqlImage);
+    emit itemdrop(info);
 }
 
+
+SeqBlockInformation::SeqBlockInformation(QPixmap image, std::string type) :
+    barcodeType(type), barcodeImage(image)
+{
+
+}
 
 SeqBlockLabel::SeqBlockLabel(QWidget* widget)
 {

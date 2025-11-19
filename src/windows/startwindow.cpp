@@ -26,12 +26,12 @@ StartWindow::StartWindow(QWidget *parent)
     //ADD START BUTTON
     ui->DemultiplexButton->setStyleSheet("QPushButton { font-weight: bold; }");
     ui->DemultiplexButton->setFixedSize(ui->DemultiplexButton->size());
+    ui->DemultiplexButton->raise();
 
     ui->CreateMatrixButton->setStyleSheet("QPushButton { font-weight: bold; }");
     ui->CreateMatrixButton->setFixedSize(ui->CreateMatrixButton->size());
+    ui->CreateMatrixButton->raise();
 
-    ui->AnalyseButton->setStyleSheet("QPushButton { font-weight: bold; }");
-    ui->AnalyseButton->setFixedSize(ui->AnalyseButton->size());
 }
 
 StartWindow::~StartWindow()

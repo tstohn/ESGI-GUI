@@ -9,10 +9,15 @@
 #include <QGraphicsGridLayout>
 #include "../qpixmaplayoutitem.h"
 #include <iostream>
-#include "seqblockparameters.h"
 #include <QGraphicsProxyWidget>
 #include <QEvent>
 #include <QGestureEvent>
+#include <QErrorMessage>
+#include "../readassemblyevents.h"
+#include "variableParameters.h"
+#include "umiParameters.h"
+#include "constantparameters.h"
+#include "rnaparameters.h"
 
 //two finger movements inside the seqBlockParameters.ui causes crash
 //therefore disable this event
@@ -31,6 +36,13 @@ namespace Ui
     class MainWindow;
 }
 
+struct DemultiplexingInput
+{
+    std::string fwFastq;
+    std::string rvFastq;
+    int threads = 1;
+};
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -45,16 +57,23 @@ class MainWindow : public QMainWindow
         QGraphicsGridLayout *layout;
         QGraphicsWidget *form;
         int numberSeqBlocks = 0;
+        QErrorMessage startError;
 
         std::vector<QGraphicsProxyWidget*> seqBlockProxyList;
-        std::vector<seqBlockParameters*> seqBlockUiList;
+        std::vector<parameterBaseClass*> seqBlockInformationList;
         std::vector<QGraphicsProxyWidget*> seqBlockImages;
         std::vector<NoTwoFingerGestureFilter*> seqBlockFilters;
 
     private slots:
-        void seqBlock_enters_ReadSeqView(QPixmap seqBlock);
+        void seqBlock_enters_ReadSeqView(SeqBlockInformation seqBlock);
         void clear_selection();
         void on_HomeButton_clicked();
+        void on_TestButton_clicked();
+        void on_RunButton_clicked();
+        void on_StopButton_clicked();
+        void clear_demultiplexing_information();
+        bool check_sequence_validity();
+
 };
 
 #endif // MAINWINDOW_H
