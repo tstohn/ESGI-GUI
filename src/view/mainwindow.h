@@ -7,15 +7,16 @@
 #include <QGraphicsPixmapItem>
 #include <QGraphicsWidget>
 #include <QGraphicsGridLayout>
-#include "../qpixmaplayoutitem.h"
+#include "qpixmaplayoutitem.h"
+#include "demultiplexingcontroller.h"
 #include <iostream>
 #include <QGraphicsProxyWidget>
 #include <QEvent>
 #include <QGestureEvent>
 #include <QErrorMessage>
-#include "../readassemblyevents.h"
-#include "variableParameters.h"
-#include "umiParameters.h"
+#include "readassemblyevents.h"
+#include "variableparameters.h"
+#include "umiparameters.h"
 #include "constantparameters.h"
 #include "rnaparameters.h"
 
@@ -63,6 +64,9 @@ class MainWindow : public QMainWindow
         std::vector<parameterBaseClass*> seqBlockInformationList;
         std::vector<QGraphicsProxyWidget*> seqBlockImages;
         std::vector<NoTwoFingerGestureFilter*> seqBlockFilters;
+        DemultiplexingController demultiplexingController;
+
+        DemultiplexingController::MainViewState collectMainViewState() const;
 
     private slots:
         void seqBlock_enters_ReadSeqView(SeqBlockInformation seqBlock);

@@ -1,7 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "src/windows/startwindow.h"
-#include "EventHandler/demultiplexingHandler.h"
+#include "src/view/startwindow.h"
+#include "src/controller/demultiplexingHandler.h"
+
 #include <QGraphicsBlurEffect>
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -203,6 +204,16 @@ void MainWindow::on_HomeButton_clicked()
     clear_demultiplexing_information();
 }
 
+DemultiplexingController::MainViewState MainWindow::collectMainViewState() const
+{
+    DemultiplexingController::MainViewState state;
+    state.forwardFastq = ui->fwFastq->text().trimmed();
+    state.reverseFastq = ui->rvFastq->text().trimmed();
+    state.outputDirectory = ui->lineEdit_5->text().trimmed();
+    state.threadsInput = ui->lineEdit_2->text().trimmed();
+    return state;
+}
+
 bool MainWindow::check_sequence_validity()
 {
     if(seqBlockInformationList.size() == 0)
@@ -222,7 +233,15 @@ void MainWindow::on_TestButton_clicked()
        return;
    }
 
-   std::string patternFile = seqBlockInformationList.front()->get_pattern_file().toStdString();
+   const auto viewState = collectMainViewState();
+   QString syncError;
+   if (!demultiplexingController.updateParameters(viewState, seqBlockInformationList, &syncError))
+   {
+       startError.showMessage(syncError);
+       return;
+   }
+   //after update parameters call the demultiplex run function and display results
+   //therefore merge the two currently existing controllers
 
    ui->RunButton->setEnabled(true);
 
@@ -249,15 +268,23 @@ void MainWindow::on_RunButton_clicked()
    ui->progressBar->setVisible(true);
    ui->StatusLabel->setVisible(true);
 
+   const auto viewState = collectMainViewState();
+   QString syncError;
+   if (!demultiplexingController.updateParameters(viewState, seqBlockInformationList, &syncError))
+   {
+       startError.showMessage(syncError);
+       return;
+   }
+
    //fetch all the information for the demultiplexing
    DemultiplexingInput input;
    input.fwFastq = ui->fwFastq->text().toStdString();
    input.rvFastq = ui->rvFastq->text().toStdString();
    input.threads = 1;
 
-   DemultiplexingHandler demultiplexingRun = DemultiplexingHandler(seqBlockInformationList, ui->progressBar, &input);
-
-   std::string patternFile = seqBlockInformationList.front()->get_pattern_file().toStdString();
+   DemultiplexingHandler demultiplexingRun = DemultiplexingHandler(demultiplexingController.parameters(),
+                                                                   ui->progressBar,
+                                                                   &input);
 
 
    //QGraphicsBlurEffect* p_blur = new QGraphicsBlurEffect;

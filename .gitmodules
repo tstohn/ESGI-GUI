@@ -1,0 +1,3 @@
+[submodule "external/ESGI"]
+	path = external/ESGI
+	url = https://github.com/tstohn/ESGI
